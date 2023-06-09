@@ -64,9 +64,9 @@
           }
         };
 		var prompt = document.getElementById("chat-gpt-input").value
-
+    var context = "I want you to write an email about [TOPIC] [DESCRIBE THE VALUE IT OFFERS READERS (IF APPLICABLE)]\nI need you to start with a sticky subject line for the email. The email subject line should:\nUse simple language - be VERY short - be descriptive - avoid spam words like \"buy now\" or \"free\" etc.\nThe email subject line could (but doesn't have to): - give a clear demand - share something valuable - make an announcement - say something unexpected or intriguing - inspire curiosity - suggest exclusivity or urgency\n\nAlways keep in mind that you are writing a full email and that this belongs to  Nordcloud which does the below:\n\n- Nordcloud’s known for developing cloud strategies that deliver on business objectives. It will help you realise the full benefits of the cloud.\n\n- Get end-to-end cloud advisory along your cloud transformation journey\nBuild cloud excellence within your organisation to drive business value\nUpskill your teams to maximise the cloud’s potential\n\n- Modernise applications with both quick wins and sustainable value\nMaximise value from the data flowing through your digital services\nDeploy cloud-based solutions efficiently and flexibly\nUse DevOps to boost productivity, cost-efficiency and effectiveness\n\n- Our experts will help build the cloud-native foundations that set you up for success. Drive value for your business with a seamless migrate and modernise journey.\n\n- Get speed, security and governance at scale with our cloud foundations\nExit your data centre and migrate to the cloud at speed\nReduce risk, remain compliant and increase agility\n\n- Speed. Scalability. Savings. We’ll help you maximise all three – while delivering more value to customers, with our trusted approaches to building your business in the cloud."
         var data = JSON.stringify({
-		  "messages":  [{"role": "user", "content": prompt}],
+		  "messages":  [{"role": "user", "content": context+" "+prompt}],
           "temperature": 0.5,
           "top_p": 1,
           "frequency_penalty": 0,
